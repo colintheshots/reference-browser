@@ -6,9 +6,14 @@
 private object Versions {
     const val kotlin = "1.3.10"
     const val coroutines = "1.0.1"
+    const val rxjava2 = "2.2.0"
+    const val rxandroid = "2.1.0"
+    const val rxrelay = "2.1.0"
+    const val anko = "0.10.8"
 
     const val androidx_appcompat = "1.0.2"
     const val androidx_constraintlayout = "1.1.3"
+    const val androidx_lifecycle = "2.0.0"
     const val androidx_preference = "1.0.0"
 
     const val google_material = "1.0.0"
@@ -20,6 +25,9 @@ private object Versions {
 
     const val thirdparty_sentry = "1.7.10"
 
+    const val junit_jupiter = "5.3.2"
+    const val mockito = "2.23.0"
+    const val mockk = "1.9.kotlin12"
     const val tools_espresso_core = "2.2.2"
     const val tools_espresso_version = "3.0.2"
     const val tools_test_orchestrator = "1.0.2"
@@ -32,6 +40,15 @@ private object Versions {
 object Deps {
     const val kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
     const val kotlin_coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    const val rxjava2 = "io.reactivex.rxjava2:rxkotlin:${Versions.rxjava2}"
+    const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
+    const val rxrelay = "com.jakewharton.rxrelay2:rxrelay:${Versions.rxrelay}"
+
+    const val anko_commons = "org.jetbrains.anko:anko-commons:${Versions.anko}"
+    const val anko_sdk = "org.jetbrains.anko:anko-sdk25:${Versions.anko}"
+    const val anko_appcompat = "org.jetbrains.anko:anko-appcompat-v7:${Versions.anko}"
+    const val anko_constraintlayout = "org.jetbrains.anko:anko-constraint-layout:${Versions.anko}"
 
     const val mozilla_concept_engine = "org.mozilla.components:concept-engine:${Versions.mozilla_android_components}"
     const val mozilla_concept_tabstray = "org.mozilla.components:concept-tabstray:${Versions.mozilla_android_components}"
@@ -68,6 +85,7 @@ object Deps {
     const val mozilla_ui_colors = "org.mozilla.components:ui-colors:${Versions.mozilla_android_components}"
 
     const val mozilla_service_firefox_accounts = "org.mozilla.components:service-firefox-accounts:${Versions.mozilla_android_components}"
+    const val mozilla_service_fretboard = "org.mozilla.components:service-fretboard:${Versions.mozilla_android_components}"
 
     const val mozilla_support_utils = "org.mozilla.components:support-utils:${Versions.mozilla_android_components}"
     const val mozilla_support_ktx= "org.mozilla.components:support-ktx:${Versions.mozilla_android_components}"
@@ -78,12 +96,21 @@ object Deps {
 
     const val androidx_appcompat = "androidx.appcompat:appcompat:${Versions.androidx_appcompat}"
     const val androidx_constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.androidx_constraintlayout}"
+    const val androidx_lifecycle = "androidx.lifecycle:lifecycle-runtime:${Versions.androidx_lifecycle}"
     const val androidx_preference = "androidx.preference:preference-ktx:${Versions.androidx_preference}"
     const val google_material = "com.google.android.material:material:${Versions.google_material}"
 
     const val tools_androidgradle = "com.android.tools.build:gradle:${Versions.android_gradle_plugin}"
     const val tools_kotlingradle = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
     const val tools_appservicesgradle = "org.mozilla.appservices:gradle-plugin:${Versions.appservices_gradle_plugin}"
+
+    const val junit_jupiter_api = "org.junit.jupiter:junit-jupiter-api:${Versions.junit_jupiter}"
+    const val junit_jupiter_params = "org.junit.jupiter:junit-jupiter-params:${Versions.junit_jupiter}"
+    const val junit_jupiter_engine = "org.junit.jupiter:junit-jupiter-engine:${Versions.junit_jupiter}"
+
+    const val mockito_core = "org.mockito:mockito-core:${Versions.mockito}"
+    const val mockito_android = "org.mockito:mockito-android:${Versions.mockito}"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
 
     const val tools_espresso_contrib = "com.android.support.test.espresso:espresso-contrib:${Versions.tools_espresso_version}"
     const val tools_espresso_core = "com.android.support.test.espresso:espresso-core:${Versions.tools_espresso_core}"

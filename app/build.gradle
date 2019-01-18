@@ -6,7 +6,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply from: "$project.rootDir/automation/gradle/versionCode.gradle"
-
 apply plugin: 'org.mozilla.appservices'
 
 appservices {
@@ -68,6 +67,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
+
+androidExtensions {
+    experimental = true
 }
 
 android.applicationVariants.all { variant ->
@@ -158,6 +161,7 @@ dependencies {
     implementation Deps.mozilla_ui_colors
 
     implementation Deps.mozilla_service_firefox_accounts
+    implementation Deps.mozilla_service_fretboard
 
     implementation Deps.mozilla_support_utils
     implementation Deps.mozilla_support_ktx
@@ -168,11 +172,21 @@ dependencies {
     geckoNightlyArmImplementation Gecko.geckoview_nightly_arm
     geckoNightlyX86Implementation Gecko.geckoview_nightly_x86
 
+    api Deps.rxjava2
+    implementation Deps.rxandroid
+    implementation Deps.rxrelay
+
+    implementation Deps.anko_commons
+    implementation Deps.anko_sdk
+    implementation Deps.anko_appcompat
+    implementation Deps.anko_constraintlayout
+
     implementation Deps.kotlin_stdlib
     implementation Deps.kotlin_coroutines
 
     implementation Deps.androidx_appcompat
     implementation Deps.androidx_constraintlayout
+    implementation Deps.androidx_lifecycle
     implementation Deps.androidx_preference
     implementation Deps.google_material
 
@@ -202,6 +216,16 @@ dependencies {
     androidTestImplementation Deps.tools_espresso_core, {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
+
+    testImplementation Deps.junit_jupiter_api
+    testImplementation Deps.junit_jupiter_params
+    testImplementation Deps.junit_jupiter_engine
+
+    testImplementation Deps.mockito_core
+    androidTestImplementation Deps.mockito_android
+    testImplementation Deps.mockk
+
+    implementation 'org.slf4j:slf4j-nop:1.7.25'
 }
 
 // -------------------------------------------------------------------------------------------------

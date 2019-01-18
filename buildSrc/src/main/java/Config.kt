@@ -4,7 +4,7 @@
 
 object Config {
     const val versionCode = 1
-    const val versionName = "1.0"
+    const val versionName = "8.0"
 
     // Synchronized build configuration for all modules
     const val compileSdkVersion = 28

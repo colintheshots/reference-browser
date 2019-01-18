@@ -9,8 +9,8 @@ import androidx.test.espresso.IdlingResource
 import org.mozilla.reference.browser.BrowserApplication
 
 /**
- * An IdlingResource implementation that waits until the current session is not loading anymore.
- * Only after loading has completed further actions will be performed.
+ * An IdlingResource implementation that waits until the current session is not Loading anymore.
+ * Only after Loading has completed further actions will be performed.
  */
 class SessionLoadedIdlingResource : IdlingResource {
     private var resourceCallback: IdlingResource.ResourceCallback? = null

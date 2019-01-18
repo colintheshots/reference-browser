@@ -7,10 +7,10 @@ package org.mozilla.reference.browser.browser
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.PermissionChecker.PERMISSION_GRANTED
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
@@ -28,6 +28,7 @@ import org.mozilla.reference.browser.BackHandler
 import org.mozilla.reference.browser.R
 import org.mozilla.reference.browser.ext.requireComponents
 import org.mozilla.reference.browser.tabs.TabsTrayFragment
+import org.mozilla.reference.browser.tabselector.SessionsFragment
 
 @Suppress("TooManyFunctions")
 class BrowserFragment : Fragment(), BackHandler {
@@ -110,6 +111,14 @@ class BrowserFragment : Fragment(), BackHandler {
             sessionFeature,
             downloadsFeature,
             promptsFeature)
+
+        button_show_sessions.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()
+                    ?.add(R.id.container, SessionsFragment.create(sessionId))
+                    ?.commit()
+        }
+
+        layoutUIComponents(browserConstraintLayout)
     }
 
     private fun showTabs() {
